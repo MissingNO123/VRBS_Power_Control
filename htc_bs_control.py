@@ -56,7 +56,7 @@ async def main():
         print("No devices found.")
         quit()
     for d in devices:
-        if d.name is not None and d.name.startswith('HTC BS '):
+        if d.name is not None and (d.name.startswith('HTC BS ') or d.name.startswith('LHB-')):
             print("Found Base Station: %s" % d.name)
             basestations.append(d) 
     if len(basestations) == 0:
