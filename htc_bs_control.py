@@ -59,6 +59,9 @@ async def main():
         if d.name is not None and d.name.startswith('HTC BS '):
             print("Found Base Station: %s" % d.name)
             basestations.append(d) 
+    if len(basestations) == 0:
+        print("No base stations found.")
+        quit()
     print("~~~")
     for bs in basestations:
         await powerState(bs, PowerState)
