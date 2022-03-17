@@ -33,7 +33,7 @@ async def powerState(bs, value):
         while client.is_connected is False:
             time.sleep(0.05)
         print("Connected!")
-        print("Powering %s..." % "ON " if PowerState is True else "OFF")
+        print("Powering %s..." % ("ON " if PowerState is True else "OFF"))
         try: 
             cmd = CMD_ON_V2 if value else CMD_OFF_V2
             p = await client.read_gatt_char(v2_Power_Char) #check if V2 BS Power Characteristic is available
