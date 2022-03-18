@@ -45,7 +45,6 @@ async def powerState(bs, value):
                 p = await client.write_gatt_char(v1_Power_Char, cmd)
             except BleakError:
                 print("Cannot send command to %s, it is probably NOT a base station", bs.name) # In case some random device with the same name as a BS gets caught by the scan
-                return None
         print("Disconnecting...")
         return await client.disconnect()
 
