@@ -8,10 +8,12 @@ Useful if you have an Oculus or other headset that doesn't let you automatically
 - Bluetooth >= 4.0 adapter supporting Bluetooth LE
 - Windows 10, Linux
     - Linux is not tested yet, and macOS probably does not work.
+- C++ CMake tools 
 - You *might* need to pair the base stations to your PC beforehand
 
 ## Installation
 ### Windows
+- Install the C++ CMake tools from the Visual Studio Installer
 - Install python [from the Microsoft Store](https://www.microsoft.com/store/productId/9PJPW5LDXLZ5) 
 - Install pip using the following command:
 ```
