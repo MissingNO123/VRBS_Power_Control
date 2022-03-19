@@ -45,7 +45,7 @@ python htc_bs_control.py on
 ```
 The program will search for any lighthouse base stations and attempt to send the command to power it on or off respectively. It can take up to 60 seconds for them to enter sleep mode. Powering on, however, should be almost instant.
 
-If you have saved the addresses of your base stations with `--save`, it will use the addresses saved in `basestations.txt` and skip the *five second long* scan process. 
+If you have saved the addresses of your base stations with `--save`, it will use the addresses saved in `basestations.txt` and skip the *five second long* scan process. Specifying `--save` while saved addresses are already present will re-scan and re-save the addressess, useful if you install a new base station.
 
 ### Optional Arguments
 ```
@@ -55,5 +55,5 @@ htc_bs_control.py [-h] [-s] [-d] [STATE]
 | --- | --- |
 | STATE | Either `on` or `off`, defaults to `on` if not specified | 
 | -h, --help | Show the help message and exit | 
-| -s, --save | Saves the addresses of the Base Stations |
+| -s, --save | Saves the addresses of the Base Stations. |
 | -d, --dryrun | Runs the program without sending any Bluetooth commands |
