@@ -12,10 +12,11 @@ args = parser.parse_args()
 
 saved_addrs = []
 
-if exists("basestations.txt"):
-    r = open("basestations.txt", "r")
-    saved_addrs = r.read().split(" ")
-    print("Loaded %d saved basestations" % len(saved_addrs))
+if not args.save:
+    if exists("basestations.txt"):
+        r = open("basestations.txt", "r")
+        saved_addrs = r.read().split(" ")
+        print("Loaded %d saved basestations" % len(saved_addrs))
 
 PowerState = True
 if args.state:
