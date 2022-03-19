@@ -8,12 +8,10 @@ Useful if you have an Oculus or other headset that doesn't let you automatically
 - Bluetooth >= 4.0 adapter supporting Bluetooth LE
 - Windows 10, Linux
     - Linux is not tested yet, and macOS probably does not work.
-- C++ CMake tools 
 - You *might* need to pair the base stations to your PC beforehand
 
 ## Installation
 ### Windows
-- Install the C++ CMake tools from the Visual Studio Installer
 - Install python [from the Microsoft Store](https://www.microsoft.com/store/productId/9PJPW5LDXLZ5) 
 - Install pip using the following command:
 ```
@@ -22,6 +20,20 @@ python -m ensurepip --upgrade
 - Install bleak using the following command:
 ```
 pip install bleak 
+```
+If the installation of bleak fails on Windows, you might need to install the C++ CMake tools [from the Visual Studio Installer](https://visualstudio.microsoft.com/vs/community/)
+### Linux
+- Install python using your package manager. For example, with Ubuntu:
+```
+sudo apt-get install python3
+```
+- Install pip using the following command:
+```
+python -m ensurepip --upgrade
+```
+- Install bleak using the following command:
+```
+pip install bleak
 ```
 
 ## Usage
