@@ -1,6 +1,7 @@
 # VRBS Power Control
+**V**irtual **R**eality **B**ase **S**tation Power Control
 
-Control the power state of your HTC/Valve Lighthouse Base Stations using Bluetooth LE, on Windows/Linux
+Allows you to toggle the power state of your HTC/Valve Lighthouse Base Stations between *on* and *sleep* modes using Bluetooth LE, on Windows/Linux
 
 Useful if you have an Oculus or other headset that isn't able to automatically manage the power state through SteamVR
 
@@ -52,9 +53,11 @@ For example:
 python vr_bs_control.py on
 ```
 
-The program will search for any base stations and attempt to send the command to power it on or off respectively. For V1 (HTC) base stations, it can take up to 60 seconds for them to enter sleep mode. Powering on, however, should be almost instant.
+The program will search for any base stations and attempt to send the command to wake/sleep respectively. 
 
-If you have saved the addresses of your base stations with `--save`, it will use the addresses saved in `basestations.txt` and skip the *five second long* scan process. Specifying `--save` while saved addresses are already present will re-scan and re-save the addressess, useful if you install a new base station.
+For V1 (HTC) base stations, it can take up to 60 seconds for them to enter sleep mode. Waking up, however, should be almost instant. V2 (Valve) base stations will wake/sleep instantly.
+
+Using the `--save` option will write any found base station's addresses to `basestations.txt`. Upon running the program after this, it will reuse the saved addresses in the text file and skip the *five second long* scan process. Running the program with the `--save` option while saved addresses are already present will re-scan and re-save the addressess, useful if you install a new base station. This file can also easily be manually edited to add or remove addresses if needed.
 
 ### Optional Arguments
 
