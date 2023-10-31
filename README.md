@@ -1,4 +1,4 @@
-# HTC BS Control
+# VRBS Power Control
 
 Control the power state of your HTC/Valve Lighthouse Base Stations using Bluetooth LE, on Windows/Linux
 
@@ -49,7 +49,7 @@ Run the command with either "on" or "off" as an argument. The default is "on".
 For example:
 
 ```bash
-python htc_bs_control.py on
+python vr_bs_control.py on
 ```
 
 The program will search for any base stations and attempt to send the command to power it on or off respectively. For V1 (HTC) base stations, it can take up to 60 seconds for them to enter sleep mode. Powering on, however, should be almost instant.
