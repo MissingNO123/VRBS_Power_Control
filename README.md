@@ -26,7 +26,7 @@ python -m ensurepip --upgrade
 ```bash
 pip install bleak 
 ```
-If the installation of bleak fails on Windows, you might need to install the C++ CMake tools [from the Visual Studio Installer](https://visualstudio.microsoft.com/vs/community/)
+If the installation of bleak fails on Windows, you might need to upgrade pip, or if that still fails, install the C++ CMake tools [from the Visual Studio Installer](https://visualstudio.microsoft.com/vs/community/)
 
 ### Linux
 
