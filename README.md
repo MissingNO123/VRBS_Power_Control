@@ -57,7 +57,7 @@ The program will search for any base stations and attempt to send the command to
 
 For V1 (HTC) base stations, it can take up to 60 seconds for them to enter sleep mode. Waking up, however, should be almost instant. V2 (Valve) base stations will wake/sleep instantly.
 
-Using the `--save` option will write any found base station's addresses to `basestations.txt`. Upon running the program after this, it will reuse the saved addresses in the text file and skip the *five second long* scan process. Running the program with the `--save` option while saved addresses are already present will re-scan and re-save the addressess, useful if you install a new base station. This file can also easily be manually edited to add or remove addresses if needed.
+Using the `--save` option will write any found base station's addresses to `basestations.txt`. Upon running the program after this, it will reuse the saved addresses in the text file and skip the *five second long* scan process. Running the program with the `--save` option while saved addresses are already present will re-scan and re-save the addressess, useful if you install a new base station. This file can also easily be manually edited to add or remove addresses if needed. You can also run the program with both the `-d` and `-s` options to scan for and save basestation addresses without having them change power state.
 
 ### Optional Arguments
 
