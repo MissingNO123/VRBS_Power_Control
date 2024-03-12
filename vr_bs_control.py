@@ -95,7 +95,7 @@ async def main():
 
     # Connect to all BSes in parallel (might be stupid if you have >2 BSes, untested)
     if not args.dryrun:
-        print( "Attempting to toggle power state" )
+        print( "Attempting to toggle power state to " + ( "ON" if PowerState else "OFF" ) + " for all base stations..." )
         for bs in basestations:
             # await powerState(bs, PowerState)
             task = asyncio.create_task(powerState(bs, PowerState))
