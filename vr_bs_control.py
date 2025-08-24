@@ -3,6 +3,7 @@ import asyncio
 import time
 from bleak import BleakScanner, BleakClient, BleakError
 import argparse
+from sys import platform
 
 parser = argparse.ArgumentParser(description="Control the power state of your HTC Vive Base Stations")
 parser.add_argument("state", metavar="STATE", nargs="?", const="ON", help="Either on or off, default: on")
@@ -96,11 +97,19 @@ async def main():
     # Connect to all BSes in parallel (might be stupid if you have >2 BSes, untested)
     if not args.dryrun:
         print( "Attempting to toggle power state to " + ( "ON" if PowerState else "OFF" ) + " for all base stations..." )
-        for bs in basestations:
-            # await powerState(bs, PowerState)
-            task = asyncio.create_task(powerState(bs, PowerState))
-            tasks.append(task)
-        await asyncio.gather(*tasks)
+        
+        #linux cannot connect to multiple devices at once, so we do it sequentially
+        if platform.startswith("linux"):
+            for bs in basestations:
+                await powerState(bs, PowerState)
+            print("Done!")
+            return
+        else:
+            for bs in basestations:
+                # await powerState(bs, PowerState)
+                task = asyncio.create_task(powerState(bs, PowerState))
+                tasks.append(task)
+            await asyncio.gather(*tasks)
     print("Done!")
 
 asyncio.run(main())
